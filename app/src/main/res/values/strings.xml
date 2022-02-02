@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">ud839_Miwok-lesson-one</string>
+    <string name="app_name">Miwok App</string>
+    <string name="numbers_activity">Numbers</string>
+    <string name="phrases_activity">Phrases</string>
+    <string name="Family_activity">Family</string>
+    <string name="colors_activity">Colors</string>
+
     <!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
