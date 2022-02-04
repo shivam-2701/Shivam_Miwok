@@ -14,11 +14,18 @@
             android:name=".NumbersActivity"
             android:exported="false" />
         <activity
+            android:label="@string/Family_activity"
             android:name=".FamilyActivity"
             android:exported="false" />
         <activity
+            android:label="@string/phrases_activity"
             android:name=".PhrasesActivity"
             android:exported="false" />
+        <activity
+            android:label="@string/colors_activity"
+            android:name=".ColorsActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

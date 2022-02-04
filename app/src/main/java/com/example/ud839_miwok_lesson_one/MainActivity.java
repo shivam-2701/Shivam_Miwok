@@ -22,6 +22,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        TextView familyActivity =(TextView) findViewById(R.id.family);
+        TextView colorsActivity =(TextView) findViewById(R.id.colors);
+        TextView phrasesActivity=(TextView) findViewById(R.id.phrases);
+        familyActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),FamilyActivity.class);
+                startActivity(intent);
+            }
+        });
+        colorsActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),ColorsActivity.class);
+                startActivity(intent);
+            }
+        });
+        phrasesActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),PhrasesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 //    public void openNumbersView(View view){
 //        Intent intent = new Intent(this,NumbersActivity.class);
