@@ -21,17 +21,19 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
         ArrayList<Word> words =new ArrayList<>();
-        words.add(new Word("one","lutti"));
-        words.add(new Word("two","otiiko"));
-        words.add(new Word("three","tolookosu"));
-        words.add(new Word("four","oyyisa"));
-        words.add(new Word("five","massokka"));
-        words.add(new Word("six","temmokka"));
-        words.add(new Word("seven","kenekaku"));
-        words.add(new Word("eight","kawinta"));
-        words.add(new Word("nine","wo'e"));
-        words.add(new Word("ten","na'aacha"));
-
+        words.add(new Word("one","lutti",getResources().getIdentifier("number_one", "drawable", getPackageName())));
+        words.add(new Word("two","otiiko",getResources().getIdentifier("number_two", "drawable", getPackageName())));
+        words.add(new Word("three","tolookosu",getResources().getIdentifier("number_three", "drawable", getPackageName())));
+        words.add(new Word("four","oyyisa",getResources().getIdentifier("number_four", "drawable", getPackageName())));
+        words.add(new Word("five","massokka",getResources().getIdentifier("number_five", "drawable", getPackageName())));
+        words.add(new Word("six","temmokka",getResources().getIdentifier("number_six", "drawable", getPackageName())));
+        words.add(new Word("seven","kenekaku",getResources().getIdentifier("number_seven", "drawable", getPackageName())));
+        words.add(new Word("eight","kawinta",getResources().getIdentifier("number_eight", "drawable", getPackageName())));
+        words.add(new Word("nine","wo'e",getResources().getIdentifier("number_nine", "drawable", getPackageName())));
+        words.add(new Word("ten","na'aacha",getResources().getIdentifier("number_ten", "drawable", getPackageName())));
+//        for(int i=0;i< words.size();i++){
+//            Log.i("image id",i+" "+words.get(i).getmImageResourceId());
+//        }
         WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words);
         ListView listView =(ListView) findViewById(R.id.list);
         listView.setAdapter((adapter));

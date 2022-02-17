@@ -9,12 +9,20 @@ public class Word {
      * Miwok translation of the same word
      */
     private String mMiwokTranslation;
+    private int mImageResourceId=-1;
     //Initialises the word class with its correct values
     public Word(String mDefaultTranslation,String mMiwokTranslation){
         this.mDefaultTranslation=mDefaultTranslation;
         this.mMiwokTranslation=mMiwokTranslation;
     }
-   //returns the default Translation of the word
+
+    public Word(String mDefaultTranslation, String mMiwokTranslation, int mImageResourceId) {
+        this.mDefaultTranslation = mDefaultTranslation;
+        this.mMiwokTranslation = mMiwokTranslation;
+        this.mImageResourceId = mImageResourceId;
+    }
+
+    //returns the default Translation of the word
     public String getDefaultTranslation(){
         return mDefaultTranslation;
     }
@@ -22,6 +30,8 @@ public class Word {
     public String getMiwokTranslation(){
         return mMiwokTranslation;
     }
+    //returns the id of the image associated
+    public int getmImageResourceId(){ return mImageResourceId; }
 
 
 }

@@ -14,14 +14,14 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colors);
         ArrayList<Word> words =new ArrayList<>();
-        words.add(new Word("red","weṭeṭṭi"));
-        words.add(new Word("green","chokokki"));
-        words.add(new Word("brown","ṭakaakki"));
-        words.add(new Word("gray","ṭopoppi"));
-        words.add(new Word("black","kululli"));
-        words.add(new Word("white","kelelli"));
-        words.add(new Word("dusty yellow","ṭopiisә"));
-        words.add(new Word("mustard yellow","chiwiiṭә"));
+        words.add(new Word("red","weṭeṭṭi",getResources().getIdentifier("color_red", "drawable", getPackageName())));
+        words.add(new Word("green","chokokki",getResources().getIdentifier("color_green", "drawable", getPackageName())));
+        words.add(new Word("brown","ṭakaakki",getResources().getIdentifier("color_brown", "drawable", getPackageName())));
+        words.add(new Word("gray","ṭopoppi",getResources().getIdentifier("color_gray", "drawable", getPackageName())));
+        words.add(new Word("black","kululli",getResources().getIdentifier("color_black", "drawable", getPackageName())));
+        words.add(new Word("white","kelelli",getResources().getIdentifier("color_white", "drawable", getPackageName())));
+        words.add(new Word("dusty yellow","ṭopiisә",getResources().getIdentifier("color_dusty_yellow", "drawable", getPackageName())));
+        words.add(new Word("mustard yellow","chiwiiṭә",getResources().getIdentifier("color_mustard_yellow", "drawable", getPackageName())));
 
         WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words);
         ListView listView =(ListView) findViewById(R.id.list);
