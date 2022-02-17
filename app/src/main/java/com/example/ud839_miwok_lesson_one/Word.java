@@ -9,7 +9,9 @@ public class Word {
      * Miwok translation of the same word
      */
     private String mMiwokTranslation;
-    private int mImageResourceId=-1;
+    private static final int  NO_IMAGE_PROVIDED=-1;
+    private int mImageResourceId=NO_IMAGE_PROVIDED;
+
     //Initialises the word class with its correct values
     public Word(String mDefaultTranslation,String mMiwokTranslation){
         this.mDefaultTranslation=mDefaultTranslation;
@@ -32,6 +34,10 @@ public class Word {
     }
     //returns the id of the image associated
     public int getmImageResourceId(){ return mImageResourceId; }
+    //returns if the image is present or not
+    public boolean hasImage(){
+        return mImageResourceId!=NO_IMAGE_PROVIDED;
+    }
 
 
 }
