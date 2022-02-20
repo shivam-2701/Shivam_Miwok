@@ -2,6 +2,7 @@ package com.example.ud839_miwok_lesson_one;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -14,6 +15,7 @@ public class FamilyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family);
         ArrayList<Word> words =new ArrayList<>();
+        int backgroundColor= R.color.category_family;
         words.add(new Word("father","әpә",getResources().getIdentifier("family_father", "drawable", getPackageName())));
         words.add(new Word("mother","әṭa",getResources().getIdentifier("family_mother", "drawable", getPackageName())));
         words.add(new Word("son","angsi",getResources().getIdentifier("family_son", "drawable", getPackageName())));
@@ -25,7 +27,7 @@ public class FamilyActivity extends AppCompatActivity {
         words.add(new Word("grandmother","ama",getResources().getIdentifier("family_grandmother", "drawable", getPackageName())));
         words.add(new Word("grandfather","paapa",getResources().getIdentifier("family_grandfather", "drawable", getPackageName())));
         
-        WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words);
+        WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words,backgroundColor);
         ListView listView =(ListView) findViewById(R.id.list);
         listView.setAdapter((adapter));
 

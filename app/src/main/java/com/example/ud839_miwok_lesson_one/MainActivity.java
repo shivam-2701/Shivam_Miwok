@@ -47,9 +47,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-//    public void openNumbersView(View view){
-//        Intent intent = new Intent(this,NumbersActivity.class);
-//        startActivity(intent);
-//
-//    }
+
 }

@@ -34,7 +34,7 @@ public class NumbersActivity extends AppCompatActivity {
 //        for(int i=0;i< words.size();i++){
 //            Log.i("image id",i+" "+words.get(i).getmImageResourceId());
 //        }
-        WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words);
+        WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words,R.color.category_numbers);
         ListView listView =(ListView) findViewById(R.id.list);
         listView.setAdapter((adapter));
 

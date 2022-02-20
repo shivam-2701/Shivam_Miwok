@@ -1,6 +1,7 @@
 package com.example.ud839_miwok_lesson_one;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +20,11 @@ import java.util.List;
 public class WordAdapter extends ArrayAdapter<Word> {
 
     ArrayList<Word> wordList=new ArrayList<>();
-    public WordAdapter(@NonNull Context context,  int textViewResourceId, @NonNull ArrayList<Word> objects) {
+    private int background= android.R.color.white;
+    public WordAdapter(@NonNull Context context,  int textViewResourceId, @NonNull ArrayList<Word> objects,int background_color) {
         super(context, textViewResourceId, objects);
         wordList=objects;
+        background=background_color;
     }
 
     /**
@@ -43,7 +46,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
         // Get the {@link AndroidFlavor} object located at this position in the list
         Word currentWord=wordList.get(position);
-
+        LinearLayout wordGroup =(LinearLayout)listViewItem.findViewById(R.id.word_group);
+        wordGroup.setBackgroundColor(listViewItem.getResources().getColor(background));
         TextView defaultText=(TextView)listViewItem.findViewById(R.id.text1);
         defaultText.setText(currentWord.getDefaultTranslation());
         TextView miwokTextView =(TextView) listViewItem.findViewById(R.id.text2);
