@@ -2,6 +2,7 @@ package com.example.ud839_miwok_lesson_one;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import java.util.List;
 public class WordAdapter extends ArrayAdapter<Word> {
 
     ArrayList<Word> wordList=new ArrayList<>();
+//    Media player class to play sound;
+    MediaPlayer player=null;
     private int background= android.R.color.white;
     public WordAdapter(@NonNull Context context,  int textViewResourceId, @NonNull ArrayList<Word> objects,int background_color) {
         super(context, textViewResourceId, objects);
@@ -47,6 +50,20 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Get the {@link AndroidFlavor} object located at this position in the list
         Word currentWord=wordList.get(position);
         LinearLayout wordGroup =(LinearLayout)listViewItem.findViewById(R.id.word_group);
+        wordGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+                    player= MediaPlayer.create(v.getContext(),currentWord.getmAudioResourceId());
+
+                player.start();
+            }
+        });
+        if(player!=null){
+        player.release();
+        player=null;
+        }
+
         wordGroup.setBackgroundColor(listViewItem.getResources().getColor(background));
         TextView defaultText=(TextView)listViewItem.findViewById(R.id.text1);
         defaultText.setText(currentWord.getDefaultTranslation());
