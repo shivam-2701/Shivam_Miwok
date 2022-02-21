@@ -21,16 +21,16 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
         ArrayList<Word> words =new ArrayList<>();
-        words.add(new Word("one","lutti",getResources().getIdentifier("number_one", "drawable", getPackageName())));
-        words.add(new Word("two","otiiko",getResources().getIdentifier("number_two", "drawable", getPackageName())));
-        words.add(new Word("three","tolookosu",getResources().getIdentifier("number_three", "drawable", getPackageName())));
-        words.add(new Word("four","oyyisa",getResources().getIdentifier("number_four", "drawable", getPackageName())));
-        words.add(new Word("five","massokka",getResources().getIdentifier("number_five", "drawable", getPackageName())));
-        words.add(new Word("six","temmokka",getResources().getIdentifier("number_six", "drawable", getPackageName())));
-        words.add(new Word("seven","kenekaku",getResources().getIdentifier("number_seven", "drawable", getPackageName())));
-        words.add(new Word("eight","kawinta",getResources().getIdentifier("number_eight", "drawable", getPackageName())));
-        words.add(new Word("nine","wo'e",getResources().getIdentifier("number_nine", "drawable", getPackageName())));
-        words.add(new Word("ten","na'aacha",getResources().getIdentifier("number_ten", "drawable", getPackageName())));
+        words.add(new Word("one","lutti",getResources().getIdentifier("number_one", "drawable", getPackageName()),R.raw.number_one));
+        words.add(new Word("two","otiiko",getResources().getIdentifier("number_two", "drawable", getPackageName()),R.raw.number_two));
+        words.add(new Word("three","tolookosu",getResources().getIdentifier("number_three", "drawable", getPackageName()),R.raw.number_three));
+        words.add(new Word("four","oyyisa",getResources().getIdentifier("number_four", "drawable", getPackageName()),R.raw.number_four));
+        words.add(new Word("five","massokka",getResources().getIdentifier("number_five", "drawable", getPackageName()),R.raw.number_five));
+        words.add(new Word("six","temmokka",getResources().getIdentifier("number_six", "drawable", getPackageName()),R.raw.number_six));
+        words.add(new Word("seven","kenekaku",getResources().getIdentifier("number_seven", "drawable", getPackageName()),R.raw.number_seven));
+        words.add(new Word("eight","kawinta",getResources().getIdentifier("number_eight", "drawable", getPackageName()),R.raw.number_eight));
+        words.add(new Word("nine","wo'e",getResources().getIdentifier("number_nine", "drawable", getPackageName()),R.raw.number_nine));
+        words.add(new Word("ten","na'aacha",getResources().getIdentifier("number_ten", "drawable", getPackageName()),R.raw.number_ten));
 //        for(int i=0;i< words.size();i++){
 //            Log.i("image id",i+" "+words.get(i).getmImageResourceId());
 //        }

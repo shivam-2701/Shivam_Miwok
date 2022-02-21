@@ -16,16 +16,16 @@ public class FamilyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_family);
         ArrayList<Word> words =new ArrayList<>();
         int backgroundColor= R.color.category_family;
-        words.add(new Word("father","әpә",getResources().getIdentifier("family_father", "drawable", getPackageName())));
-        words.add(new Word("mother","әṭa",getResources().getIdentifier("family_mother", "drawable", getPackageName())));
-        words.add(new Word("son","angsi",getResources().getIdentifier("family_son", "drawable", getPackageName())));
-        words.add(new Word("daughter","tune",getResources().getIdentifier("family_daughter", "drawable", getPackageName())));
-        words.add(new Word("older brother","taachi",getResources().getIdentifier("family_older_brother", "drawable", getPackageName())));
-        words.add(new Word("younger brother","chalitti",getResources().getIdentifier("family_younger_brother", "drawable", getPackageName())));
-        words.add(new Word("older sister","teṭe",getResources().getIdentifier("family_older_sister", "drawable", getPackageName())));
-        words.add(new Word("younger sister","kolliti",getResources().getIdentifier("family_younger_sister", "drawable", getPackageName())));
-        words.add(new Word("grandmother","ama",getResources().getIdentifier("family_grandmother", "drawable", getPackageName())));
-        words.add(new Word("grandfather","paapa",getResources().getIdentifier("family_grandfather", "drawable", getPackageName())));
+        words.add(new Word("father","әpә",getResources().getIdentifier("family_father", "drawable", getPackageName()),R.raw.family_father));
+        words.add(new Word("mother","әṭa",getResources().getIdentifier("family_mother", "drawable", getPackageName()),R.raw.family_mother));
+        words.add(new Word("son","angsi",getResources().getIdentifier("family_son", "drawable", getPackageName()),R.raw.family_son));
+        words.add(new Word("daughter","tune",getResources().getIdentifier("family_daughter", "drawable", getPackageName()),R.raw.family_daughter));
+        words.add(new Word("older brother","taachi",getResources().getIdentifier("family_older_brother", "drawable", getPackageName()),R.raw.family_older_brother));
+        words.add(new Word("younger brother","chalitti",getResources().getIdentifier("family_younger_brother", "drawable", getPackageName()),R.raw.family_younger_brother));
+        words.add(new Word("older sister","teṭe",getResources().getIdentifier("family_older_sister", "drawable", getPackageName()),R.raw.family_older_sister));
+        words.add(new Word("younger sister","kolliti",getResources().getIdentifier("family_younger_sister", "drawable", getPackageName()),R.raw.family_younger_sister));
+        words.add(new Word("grandmother","ama",getResources().getIdentifier("family_grandmother", "drawable", getPackageName()),R.raw.family_grandmother));
+        words.add(new Word("grandfather","paapa",getResources().getIdentifier("family_grandfather", "drawable", getPackageName()),R.raw.family_grandfather));
         
         WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words,backgroundColor);
         ListView listView =(ListView) findViewById(R.id.list);
