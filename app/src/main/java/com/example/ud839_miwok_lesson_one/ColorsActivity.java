@@ -30,13 +30,11 @@ public class ColorsActivity extends AppCompatActivity {
         WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words,R.color.category_colors);
         ListView listView =(ListView) findViewById(R.id.list);
         listView.setAdapter((adapter));
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Word currentWord=(Word) parent.getAdapter().getItem(position);
-                player=MediaPlayer.create(view.getContext(),currentWord.getmAudioResourceId());
-                player.start();
-            }
+        // lambda expression in place of anonymous
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Word currentWord=(Word) parent.getAdapter().getItem(position);
+            player=MediaPlayer.create(view.getContext(),currentWord.getmAudioResourceId());
+            player.start();
         });
     }
 }
