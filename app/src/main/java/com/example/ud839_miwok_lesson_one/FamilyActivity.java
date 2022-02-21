@@ -3,13 +3,16 @@ package com.example.ud839_miwok_lesson_one;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
-
+    MediaPlayer player=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +33,15 @@ public class FamilyActivity extends AppCompatActivity {
         WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words,backgroundColor);
         ListView listView =(ListView) findViewById(R.id.list);
         listView.setAdapter((adapter));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Word currentWord=(Word) parent.getAdapter().getItem(position);
+
+                player=MediaPlayer.create(view.getContext(),currentWord.getmAudioResourceId());
+                player.start();
+            }
+        });
 
     }
 }

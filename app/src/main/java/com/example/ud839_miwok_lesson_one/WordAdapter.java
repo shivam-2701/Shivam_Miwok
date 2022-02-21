@@ -6,9 +6,11 @@ import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,19 +52,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Get the {@link AndroidFlavor} object located at this position in the list
         Word currentWord=wordList.get(position);
         LinearLayout wordGroup =(LinearLayout)listViewItem.findViewById(R.id.word_group);
-        wordGroup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-                    player= MediaPlayer.create(v.getContext(),currentWord.getmAudioResourceId());
-
-                player.start();
-            }
-        });
-        if(player!=null){
-        player.release();
-        player=null;
-        }
 
         wordGroup.setBackgroundColor(listViewItem.getResources().getColor(background));
         TextView defaultText=(TextView)listViewItem.findViewById(R.id.text1);
