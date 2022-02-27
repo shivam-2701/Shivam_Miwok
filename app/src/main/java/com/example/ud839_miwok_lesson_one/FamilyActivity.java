@@ -33,15 +33,32 @@ public class FamilyActivity extends AppCompatActivity {
         WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words,backgroundColor);
         ListView listView =(ListView) findViewById(R.id.list);
         listView.setAdapter((adapter));
+
+        //On Item Click listener for item click and preserve resources
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word currentWord=(Word) parent.getAdapter().getItem(position);
-
+                releaseMediaPlayer();
                 player=MediaPlayer.create(view.getContext(),currentWord.getmAudioResourceId());
                 player.start();
+                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        releaseMediaPlayer();
+                    }
+                });
             }
         });
+
+    }
+    // Function to release the media resources
+    private void releaseMediaPlayer(){
+        if(player!=null){
+            player.release();
+        }
+        player=null;
+
 
     }
 }

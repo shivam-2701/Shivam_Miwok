@@ -10,8 +10,26 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
 public class PhrasesActivity extends AppCompatActivity {
 
+//    public class completionListener implements MediaPlayer.OnCompletionListener{
+//
+//
+//        @Override
+//        public void onCompletion(MediaPlayer mp) {
+//            releaseMediaPlayer();
+//        }
+//    };
+//
+
+    // Create once and use every where instead of creating instance for each item
+    MediaPlayer.OnCompletionListener mOnCompletionListener=new MediaPlayer.OnCompletionListener() {
+    @Override
+    public void onCompletion(MediaPlayer mp) {
+        releaseMediaPlayer();
+    }
+};
     MediaPlayer player=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +50,25 @@ public class PhrasesActivity extends AppCompatActivity {
         WordAdapter adapter =new WordAdapter(this,R.layout.list_item,words,R.color.category_phrases);
         ListView listView =(ListView) findViewById(R.id.list);
         listView.setAdapter((adapter));
+
+        //SetOnItemCLickListener
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word currentWord=(Word) parent.getAdapter().getItem(position);
-
+                releaseMediaPlayer();
                 player=MediaPlayer.create(view.getContext(),currentWord.getmAudioResourceId());
                 player.start();
+                player.setOnCompletionListener(mOnCompletionListener);
             }
         });
+    }
+    private void releaseMediaPlayer(){
+        if(player!=null){
+            player.release();
+        }
+        player=null;
+
+
     }
 }
