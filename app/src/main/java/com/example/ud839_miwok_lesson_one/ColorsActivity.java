@@ -48,7 +48,21 @@ public class ColorsActivity extends AppCompatActivity {
             }
         });
     }
-
+    //To stop the playback when the app is not visible
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(player!=null){
+            player.stop();
+        }
+    }
+    //To stop the playback when the app is not visible
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+    //To Release the resources when app stops
     private void releaseMediaPlayer() {
         if (player != null) {
             player.release();

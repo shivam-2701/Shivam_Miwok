@@ -71,4 +71,18 @@ public class PhrasesActivity extends AppCompatActivity {
 
 
     }
+    //To stop the playback when the app is not visible
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(player!=null){
+            player.stop();
+        }
+    }
+    //To Release the resources when app stops
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
 }
