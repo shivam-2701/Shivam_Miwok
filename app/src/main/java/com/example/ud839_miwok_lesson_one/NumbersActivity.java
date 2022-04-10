@@ -1,6 +1,8 @@
 package com.example.ud839_miwok_lesson_one;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -50,6 +52,11 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+        // my_child_toolbar is defined in the layout file
+        
+
+
+
         final ArrayList<Word> words =new ArrayList<>();
         words.add(new Word("one","lutti",getResources().getIdentifier("number_one", "drawable", getPackageName()),R.raw.number_one));
         words.add(new Word("two","otiiko",getResources().getIdentifier("number_two", "drawable", getPackageName()),R.raw.number_two));

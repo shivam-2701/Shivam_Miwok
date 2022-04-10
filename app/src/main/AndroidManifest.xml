@@ -12,18 +12,22 @@
         android:theme="@style/AppTheme">
         <activity
             android:label="@string/numbers_activity"
+            android:parentActivityName=".MainActivity"
             android:name=".NumbersActivity"
             android:exported="false" />
         <activity
             android:label="@string/Family_activity"
+            android:parentActivityName=".MainActivity"
             android:name=".FamilyActivity"
             android:exported="false" />
         <activity
             android:label="@string/phrases_activity"
+            android:parentActivityName=".MainActivity"
             android:name=".PhrasesActivity"
             android:exported="false" />
         <activity
             android:label="@string/colors_activity"
+            android:parentActivityName=".MainActivity"
             android:name=".ColorsActivity"
             android:exported="false" />
 
