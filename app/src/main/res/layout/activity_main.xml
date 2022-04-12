@@ -4,8 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/tan_background"
     android:orientation="vertical">
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/primary_color">
+   <com.google.android.material.tabs.TabLayout
+       android:id="@+id/sliding_tabs"
+       android:layout_width="match_parent"
+       app:tabTextColor="@color/white"
+       android:layout_height="wrap_content"
+       app:tabMode="fixed" />
+   </FrameLayout>
 
    <androidx.viewpager.widget.ViewPager
        android:id="@+id/viewpager"

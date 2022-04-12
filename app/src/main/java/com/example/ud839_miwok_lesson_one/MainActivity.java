@@ -6,8 +6,11 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Create an adapter that knows which fragment should be shown on each page
         SimplePagerAdapter adapter = new SimplePagerAdapter(getSupportFragmentManager());
-
+        TabLayout tabLayout=(TabLayout)findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
         // Set the adapter onto the view pager
         viewPager.setAdapter(adapter);
     }
